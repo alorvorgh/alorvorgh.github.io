@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alorvor GH</title>
+<meta name="description" content="PMP-certified project professional specializing in IT delivery, ERP implementation, and digital transformation. Based in Tema, Ghana.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ════════════════════════════════════════════════════
+   HOW TO UPDATE THIS PORTFOLIO
+   ─────────────────────────────────────────────────
+   To add a project: find "IMPLEMENTATION PORTFOLIO"
+   section, copy a .project-card block, paste it,
+   and update the text and links.
+   To add a blog post: find "BLOG POSTS" and copy
+   a .blog-card block.
+   ════════════════════════════════════════════════════ */
+
+:root {
+  --ink:     #0E1117;
+  --ink-2:   #2C3140;
+  --muted:   #6B7280;
+  --rule:    #E5E7EB;
+  --surface: #FFFFFF;
+  --bg:      #F8F7F4;
+  --accent:  #1B3A6B;
+  --teal:    #0D7377;
+  --gold:    #C9A84C;
+  --warm:    #F5F3EE;
+  --serif:   'Cormorant Garamond', Georgia, serif;
+  --sans:    'Outfit', system-ui, sans-serif;
+  --mono:    'DM Mono', monospace;
+  --ease:    cubic-bezier(0.22, 1, 0.36, 1);
+  --radius:  12px;
+  --shadow:  0 4px 24px rgba(27,58,107,.09);
+  --shadow-lg: 0 12px 48px rgba(27,58,107,.13);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ── Grain ─────────────────────────────────────────── */
+body::before {
+  content:''; position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.02; pointer-events:none; z-index:9999;
+}
+
+/* ── Cursor ────────────────────────────────────────── */
+.cursor {
+  width:8px; height:8px; background:var(--accent); border-radius:50%;
+  position:fixed; pointer-events:none; z-index:10000;
+  transform:translate(-50%,-50%); transition:width .2s var(--ease),height .2s var(--ease);
+  mix-blend-mode:multiply;
+}
+.cursor.grow { width:34px; height:34px; background:var(--teal); opacity:.45; }
+
+/* ── Nav ───────────────────────────────────────────── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:0 60px; height:68px;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:background .3s, box-shadow .3s;
+}
+nav.scrolled {
+  background:rgba(248,247,244,.9);
+  backdrop-filter:blur(16px);
+  box-shadow:0 1px 0 var(--rule);
+}
+.nav-logo {
+  font-family:var(--serif); font-size:21px; font-weight:600;
+  color:var(--ink); text-decoration:none; letter-spacing:-.2px;
+}
+.nav-logo span { color:var(--teal); }
+.nav-links { display:flex; gap:32px; list-style:none; }
+.nav-links a {
+  font-size:12.5px; font-weight:600; color:var(--muted);
+  text-decoration:none; letter-spacing:.5px; text-transform:uppercase;
+  transition:color .2s; position:relative;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:-3px; left:0;
+  width:0; height:1.5px; background:var(--teal);
+  transition:width .25s var(--ease);
+}
+.nav-links a:hover { color:var(--ink); }
+.nav-links a:hover::after { width:100%; }
+
+/* ── Hero ──────────────────────────────────────────── */
+.hero {
+  min-height:100vh; display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center; padding:120px 60px 80px; gap:80px;
+  position:relative; overflow:hidden;
+}
+.hero-blob-1 {
+  position:absolute; top:-100px; right:-100px;
+  width:560px; height:560px; border-radius:50%;
+  background:radial-gradient(circle,rgba(13,115,119,.09) 0%,transparent 70%);
+  animation:breathe 9s ease-in-out infinite;
+}
+.hero-blob-2 {
+  position:absolute; bottom:-80px; left:8%;
+  width:380px; height:380px; border-radius:50%;
+  background:radial-gradient(circle,rgba(27,58,107,.07) 0%,transparent 70%);
+  animation:breathe 11s ease-in-out infinite reverse;
+}
+@keyframes breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.07)} }
+
+.hero-left { position:relative; z-index:1; }
+.hero-eyebrow {
+  display:flex; align-items:center; gap:10px; margin-bottom:20px;
+  opacity:0; animation:fadeUp .8s var(--ease) .1s forwards;
+}
+.eyebrow-line { width:28px; height:1.5px; background:var(--teal); }
+.eyebrow-text {
+  font-family:var(--mono); font-size:11px; color:var(--teal);
+  letter-spacing:1.5px; text-transform:uppercase;
+}
+.hero-name {
+  font-family:var(--serif); font-size:clamp(48px,5.5vw,74px);
+  font-weight:300; line-height:1.06; letter-spacing:-1px;
+  margin-bottom:10px; color:var(--ink);
+  opacity:0; animation:fadeUp .9s var(--ease) .2s forwards;
+}
+.hero-name em { font-style:italic; color:var(--teal); }
+.hero-headline {
+  font-family:var(--mono); font-size:13px; color:var(--accent);
+  font-weight:500; letter-spacing:.3px; margin-bottom:24px;
+  opacity:0; animation:fadeUp .9s var(--ease) .3s forwards;
+  padding:8px 14px; background:rgba(27,58,107,.07);
+  border-radius:6px; display:inline-block;
+  border-left:3px solid var(--accent);
+}
+.hero-positioning {
+  font-size:15px; color:var(--ink-2); line-height:1.75;
+  max-width:480px; margin-bottom:32px;
+  opacity:0; animation:fadeUp .9s var(--ease) .4s forwards;
+}
+.hero-positioning strong { color:var(--accent); font-weight:600; }
+.hero-tags {
+  display:flex; flex-wrap:wrap; gap:8px; margin-bottom:44px;
+  opacity:0; animation:fadeUp .9s var(--ease) .5s forwards;
+}
+.tag {
+  padding:5px 13px; border-radius:100px;
+  font-size:11.5px; font-weight:500; letter-spacing:.2px;
+}
+.tag-navy  { background:rgba(27,58,107,.08);  color:var(--accent); border:1px solid rgba(27,58,107,.16); }
+.tag-teal  { background:rgba(13,115,119,.08); color:var(--teal);   border:1px solid rgba(13,115,119,.18); }
+.tag-gold  { background:rgba(201,168,76,.10); color:#9A6F1A;        border:1px solid rgba(201,168,76,.22); }
+
+.hero-cta {
+  display:flex; gap:14px; align-items:center;
+  opacity:0; animation:fadeUp .9s var(--ease) .6s forwards;
+}
+.btn-primary {
+  padding:13px 30px; background:var(--accent); color:#fff;
+  border:none; border-radius:7px; font-family:var(--sans);
+  font-size:13.5px; font-weight:600; cursor:pointer;
+  text-decoration:none; display:inline-flex; align-items:center; gap:7px;
+  transition:background .2s, transform .2s var(--ease), box-shadow .2s;
+  letter-spacing:.3px;
+}
+.btn-primary:hover { background:#142d54; transform:translateY(-2px); box-shadow:0 8px 24px rgba(27,58,107,.25); }
+.btn-ghost {
+  padding:12px 26px; background:transparent; color:var(--ink);
+  border:1.5px solid var(--rule); border-radius:7px;
+  font-family:var(--sans); font-size:13.5px; font-weight:500;
+  cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:7px;
+  transition:border-color .2s, color .2s, transform .2s var(--ease);
+}
+.btn-ghost:hover { border-color:var(--teal); color:var(--teal); transform:translateY(-2px); }
+
+/* ── Profile card ──────────────────────────────────── */
+.hero-right {
+  position:relative; z-index:1;
+  opacity:0; animation:fadeIn 1.2s var(--ease) .5s forwards;
+}
+.profile-card {
+  background:var(--surface); border-radius:20px; padding:36px;
+  box-shadow:0 2px 0 var(--rule), var(--shadow-lg);
+  position:relative; overflow:hidden;
+}
+.profile-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--teal),var(--gold));
+}
+.profile-card-name {
+  font-family:var(--serif); font-size:24px; font-weight:600;
+  color:var(--ink); margin-bottom:3px;
+}
+.profile-card-headline {
+  font-size:11.5px; color:var(--teal); font-weight:600;
+  letter-spacing:.3px; margin-bottom:24px;
+  font-family:var(--mono);
+}
+.stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:26px; }
+.stat-box {
+  background:var(--warm); border-radius:11px; padding:16px 18px;
+  border:1px solid var(--rule);
+}
+.stat-num {
+  font-family:var(--serif); font-size:30px; font-weight:600;
+  color:var(--accent); line-height:1; margin-bottom:3px;
+}
+.stat-label { font-size:10.5px; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:.6px; }
+.profile-info { border-top:1px solid var(--rule); padding-top:20px; display:flex; flex-direction:column; gap:9px; }
+.info-row { display:flex; align-items:flex-start; gap:10px; font-size:13px; }
+.info-icon { color:var(--teal); flex-shrink:0; margin-top:1px; }
+.info-label { color:var(--muted); min-width:76px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
+.info-val { color:var(--ink-2); font-weight:500; }
+
+/* ── Shared section styles ─────────────────────────── */
+section { padding:96px 60px; }
+.section-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:52px; gap:24px; }
+.section-label { font-family:var(--mono); font-size:11px; color:var(--teal); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+.section-title { font-family:var(--serif); font-size:clamp(34px,4vw,52px); font-weight:300; color:var(--ink); line-height:1.1; letter-spacing:-.5px; }
+.section-title em { font-style:italic; color:var(--teal); }
+.section-desc { max-width:340px; font-size:13.5px; color:var(--muted); line-height:1.7; text-align:right; }
+
+/* ── IMPLEMENTATION PORTFOLIO ──────────────────────── */
+#portfolio { background:var(--surface); }
+
+.portfolio-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+/* ─────────────────────────────────────────────────────
+   ADD NEW PROJECTS HERE
+   Copy one .project-card block, paste below the last
+   one inside .portfolio-grid, and update the content.
+───────────────────────────────────────────────────── */
+.project-card {
+  background:var(--bg); border:1px solid var(--rule);
+  border-radius:var(--radius); padding:28px; position:relative;
+  overflow:hidden; cursor:pointer; display:flex; flex-direction:column;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+}
+.project-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:var(--card-accent, var(--accent));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .4s var(--ease);
+}
+.project-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); border-color:transparent; }
+.project-card:hover::before { transform:scaleX(1); }
+
+.card-number {
+  font-family:var(--mono); font-size:10px; color:var(--muted);
+  letter-spacing:1.5px; text-transform:uppercase; margin-bottom:12px;
+}
+.card-category {
+  font-family:var(--mono); font-size:9.5px; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--muted); margin-bottom:10px;
+  display:flex; align-items:center; gap:7px;
+}
+.card-category::before { content:''; width:14px; height:1px; background:var(--muted); }
+.card-title { font-family:var(--serif); font-size:22px; font-weight:600; color:var(--ink); line-height:1.2; margin-bottom:5px; letter-spacing:-.2px; }
+.card-subtitle { font-size:12px; color:var(--teal); font-weight:500; margin-bottom:14px; font-style:italic; }
+.card-desc { font-size:13.5px; color:var(--muted); line-height:1.68; margin-bottom:20px; flex:1; }
+.card-components {
+  display:flex; flex-wrap:wrap; gap:5px; margin-bottom:18px;
+}
+.card-chip {
+  padding:2px 9px; border-radius:100px; font-size:10.5px; font-weight:500;
+  background:var(--surface); color:var(--ink-2); border:1px solid var(--rule);
+}
+.card-meta {
+  display:flex; gap:16px; margin-bottom:20px;
+  padding-top:16px; border-top:1px solid var(--rule);
+}
+.meta-item { display:flex; flex-direction:column; gap:2px; }
+.meta-label { font-size:9.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.7px; font-weight:600; }
+.meta-val { font-size:12.5px; color:var(--ink); font-weight:600; }
+.card-actions { display:flex; gap:8px; }
+.card-btn {
+  flex:1; padding:9px 14px; border-radius:7px; font-size:12px; font-weight:600;
+  text-align:center; text-decoration:none; cursor:pointer; border:none;
+  font-family:var(--sans); transition:all .2s;
+  display:flex; align-items:center; justify-content:center; gap:5px;
+}
+.card-btn-primary { background:var(--accent); color:#fff; }
+.card-btn-primary:hover { background:#142d54; }
+.card-btn-secondary { background:transparent; color:var(--ink-2); border:1.5px solid var(--rule); }
+.card-btn-secondary:hover { border-color:var(--teal); color:var(--teal); }
+
+.card-status-badge {
+  position:absolute; top:16px; right:16px;
+  font-size:9px; font-weight:700; padding:3px 8px; border-radius:100px;
+  text-transform:uppercase; letter-spacing:.8px;
+}
+.badge-live   { background:#D1FAE5; color:#065F46; }
+.badge-wip    { background:#FEF3C7; color:#92400E; }
+.badge-coming { background:#EDE9FE; color:#5B21B6; }
+
+/* Coming soon card */
+.project-card.soon {
+  background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(0,0,0,.012) 10px,rgba(0,0,0,.012) 20px);
+  border-style:dashed; cursor:default; opacity:.65;
+}
+.project-card.soon:hover { transform:none; box-shadow:none; border-color:var(--rule); }
+
+/* ── Tech Stack ────────────────────────────────────── */
+#techstack { background:var(--warm); }
+.tech-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+}
+.tech-card {
+  background:var(--surface); border:1.5px solid var(--rule);
+  border-radius:var(--radius); padding:22px 20px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+  transition:border-color .2s, transform .2s var(--ease), box-shadow .2s;
+}
+.tech-card:hover { border-color:var(--teal); transform:translateY(-3px); box-shadow:var(--shadow); }
+.tech-icon { font-size:26px; }
+.tech-name { font-size:14px; font-weight:700; color:var(--ink); }
+.tech-desc { font-size:12px; color:var(--muted); line-height:1.5; }
+.tech-cat {
+  font-family:var(--mono); font-size:9px; color:var(--teal);
+  text-transform:uppercase; letter-spacing:1px; font-weight:500;
+}
+
+/* ── Skills ────────────────────────────────────────── */
+#skills { background:var(--surface); }
+.skills-layout { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+.skill-group { margin-bottom:36px; }
+.skill-group-label {
+  font-family:var(--mono); font-size:10.5px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--teal); margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.skill-group-label::after { content:''; flex:1; height:1px; background:var(--rule); }
+.skill-item { display:flex; align-items:center; justify-content:space-between; margin-bottom:13px; gap:14px; }
+.skill-name { font-size:13.5px; color:var(--ink-2); font-weight:500; min-width:170px; }
+.skill-bar-track { flex:1; height:3px; background:var(--rule); border-radius:100px; overflow:hidden; }
+.skill-bar-fill { height:100%; background:linear-gradient(90deg,var(--accent),var(--teal)); border-radius:100px; width:0; transition:width 1.2s var(--ease); }
+.skill-pct { font-family:var(--mono); font-size:11.5px; color:var(--muted); min-width:34px; text-align:right; }
+.cert-list { display:flex; flex-direction:column; gap:12px; }
+.cert-item {
+  display:flex; align-items:center; gap:14px; padding:14px 18px;
+  background:var(--warm); border-radius:11px; border:1px solid var(--rule);
+}
+.cert-icon { width:38px; height:38px; border-radius:9px; background:rgba(27,58,107,.08); display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
+.cert-name { font-size:13.5px; font-weight:600; color:var(--ink); }
+.cert-issuer { font-size:11.5px; color:var(--muted); margin-top:2px; }
+.cert-year { margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--teal); font-weight:500; }
+
+/* ── Experience ────────────────────────────────────── */
+#experience { background:var(--warm); }
+.timeline { position:relative; padding-left:38px; max-width:740px; }
+.timeline::before { content:''; position:absolute; left:0; top:8px; bottom:0; width:1.5px; background:var(--rule); }
+.timeline-item { position:relative; margin-bottom:44px; opacity:0; transform:translateX(-14px); transition:opacity .6s var(--ease), transform .6s var(--ease); }
+.timeline-item.visible { opacity:1; transform:translateX(0); }
+.timeline-dot { position:absolute; left:-44px; top:6px; width:12px; height:12px; border-radius:50%; background:var(--surface); border:2.5px solid var(--teal); }
+.timeline-item:first-child .timeline-dot { background:var(--teal); }
+.timeline-period { font-family:var(--mono); font-size:10.5px; color:var(--teal); letter-spacing:1px; margin-bottom:5px; text-transform:uppercase; }
+.timeline-role { font-family:var(--serif); font-size:21px; font-weight:600; color:var(--ink); margin-bottom:2px; }
+.timeline-org { font-size:13.5px; color:var(--muted); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.org-badge { font-size:9.5px; font-weight:600; padding:2px 8px; border-radius:100px; background:rgba(13,115,119,.1); color:var(--teal); letter-spacing:.5px; text-transform:uppercase; }
+.timeline-desc { font-size:13.5px; color:var(--ink-2); line-height:1.7; }
+
+/* ── Blog ──────────────────────────────────────────── */
+#blog { background:var(--surface); }
+.blog-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+.blog-card {
+  background:var(--bg); border:1px solid var(--rule); border-radius:var(--radius);
+  padding:28px; cursor:pointer; position:relative; overflow:hidden;
+  transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
+  text-decoration:none; display:block;
+}
+.blog-card::before {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--teal));
+  transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease);
+}
+.blog-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:transparent; }
+.blog-card:hover::before { transform:scaleX(1); }
+.blog-tag {
+  display:inline-block; padding:3px 10px; border-radius:100px;
+  font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.8px;
+  background:rgba(13,115,119,.09); color:var(--teal); margin-bottom:14px;
+}
+.blog-title {
+  font-family:var(--serif); font-size:22px; font-weight:600;
+  color:var(--ink); line-height:1.25; margin-bottom:10px; letter-spacing:-.2px;
+}
+.blog-excerpt { font-size:13.5px; color:var(--muted); line-height:1.7; margin-bottom:18px; }
+.blog-meta {
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:11.5px; color:var(--muted); padding-top:16px; border-top:1px solid var(--rule);
+}
+.blog-read-time { font-family:var(--mono); font-size:10.5px; color:var(--teal); }
+.blog-arrow { color:var(--teal); font-size:16px; transition:transform .2s; }
+.blog-card:hover .blog-arrow { transform:translateX(4px); }
+
+/* ── Contact ───────────────────────────────────────── */
+#contact { background:var(--ink); color:#fff; position:relative; overflow:hidden; }
+#contact::before {
+  content:''; position:absolute; top:-180px; right:-180px; width:560px; height:560px;
+  border-radius:50%; background:radial-gradient(circle,rgba(13,115,119,.2) 0%,transparent 65%);
+}
+.contact-inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.contact-heading { font-family:var(--serif); font-size:clamp(38px,5vw,64px); font-weight:300; line-height:1.1; letter-spacing:-.5px; margin-bottom:18px; }
+.contact-heading em { font-style:italic; color:var(--teal); }
+.contact-sub { color:rgba(255,255,255,.55); font-size:14.5px; line-height:1.7; }
+.contact-links { display:flex; flex-direction:column; gap:14px; }
+.contact-link {
+  display:flex; align-items:center; gap:14px; padding:18px 22px;
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+  border-radius:11px; text-decoration:none; color:#fff;
+  transition:background .2s, border-color .2s, transform .2s var(--ease);
+}
+.contact-link:hover { background:rgba(13,115,119,.2); border-color:rgba(13,115,119,.4); transform:translateX(6px); }
+.contact-link-icon { width:40px; height:40px; border-radius:9px; background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
+.contact-link-label { font-size:10.5px; color:rgba(255,255,255,.4); text-transform:uppercase; letter-spacing:.8px; font-weight:500; }
+.contact-link-val { font-size:14px; font-weight:500; margin-top:1px; }
+.contact-link-arrow { margin-left:auto; color:rgba(255,255,255,.3); font-size:16px; transition:transform .2s; }
+.contact-link:hover .contact-link-arrow { transform:translateX(4px); color:var(--teal); }
+
+/* ── Footer ────────────────────────────────────────── */
+footer {
+  background:#080C12; color:rgba(255,255,255,.3);
+  text-align:center; padding:26px 60px; font-size:12px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.footer-logo { font-family:var(--serif); font-size:16px; color:rgba(255,255,255,.5); }
+
+/* ── Animations ────────────────────────────────────── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.reveal { opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease),transform .7s var(--ease); }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ── Responsive ────────────────────────────────────── */
+@media(max-width:1100px) {
+  .portfolio-grid { grid-template-columns:repeat(2,1fr); }
+  .tech-grid { grid-template-columns:repeat(3,1fr); }
+}
+@media(max-width:900px) {
+  nav { padding:0 24px; }
+  .nav-links { display:none; }
+  .hero { grid-template-columns:1fr; padding:100px 24px 60px; gap:44px; }
+  .hero-right { order:-1; }
+  section { padding:68px 24px; }
+  .section-header { flex-direction:column; align-items:flex-start; }
+  .section-desc { text-align:left; max-width:100%; }
+  .portfolio-grid { grid-template-columns:1fr; }
+  .tech-grid { grid-template-columns:repeat(2,1fr); }
+  .skills-layout { grid-template-columns:1fr; gap:36px; }
+  .blog-grid { grid-template-columns:1fr; }
+  .contact-inner { grid-template-columns:1fr; gap:44px; }
+  footer { flex-direction:column; gap:8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <a class="nav-logo" href="#"><span></span></a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#techstack">Tech Stack</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#blog">Insights</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">IT Delivery · Digital Transformation · International Development</span>
+    </div>
+
+    <h1 class="hero-name">ALORVOR<br><em>Godwin Kofi</em></h1>
+
+    <div class="hero-headline">PMP® | IT Project Management | Systems Implementation | Digital Transformation</div>
+
+    <p class="hero-positioning">
+      <strong>PMP-certified project professional</strong> specializing in IT delivery,
+      ERP implementation, and digital transformation. I turn complex operational
+      challenges into structured, delivered solutions from legacy paper workflows
+      to enterprise systems.
+    </p>
+
+    <div class="hero-tags">
+      <span class="tag tag-navy">PMP® Certified</span>
+      <span class="tag tag-teal">ERP Implementation</span>
+      <span class="tag tag-gold">Digital Transformation</span>
+      <span class="tag tag-navy">IT Operations</span>
+      <span class="tag tag-teal">AfCFTA Secretariat</span>
+      <span class="tag tag-gold">EMBA · UGBS</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#portfolio" class="btn-primary">View Implementation Portfolio →</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="profile-card">
+      <div class="profile-card-name">Godwin Kofi Alorvor</div>
+      <div class="profile-card-headline">PMP® | IT Project Mgmt | ERP | Digital Transformation</div>
+
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="stat-num">PMP®</div>
+          <div class="stat-label">Certified</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Years Delivery</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">EMBA</div>
+          <div class="stat-label">UGBS</div>
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <div class="info-row">
+          <span class="info-icon"><img width="15" height="15" src="https://img.icons8.com/fluency/48/marker.png" alt="marker"/></span>
+          <span class="info-label">Location</span>
+          <span class="info-val">Tema, Greater Accra, Ghana</span>
+        </div>
+        <div class="info-row">
+          <span class="info-icon"><img width="15" height="15" src="https://img.icons8.com/fluency/48/portfolio.png" alt="portfolio"/></span>
+          <span class="info-label">Current</span>
+          <span class="info-val">AfCFTA Secretariat — NTM Division</span>
+        </div>
+        <div class="info-row">
+          <span class="info-icon"><img width="15" height="15" src="https://img.icons8.com/emoji/48/bullseye.png" alt="bullseye"/></span>
+          <span class="info-label">Speciality</span>
+          <span class="info-val">ERP Implementation · IT Delivery</span>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">✉️</span>
+          <span class="info-label">Open to</span>
+          <span class="info-val">IT PM · ERP · Digital Transformation roles</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     IMPLEMENTATION PORTFOLIO
+     ──────────────────────────────────────────────────────────────
+     ADD NEW PROJECTS: copy a .project-card block and paste it
+     below. Update title, description, chips, and links.
+══════════════════════════════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Delivery Track Record</div>
+      <h2 class="section-title">Implementation <em>Portfolio</em></h2>
+    </div>
+    <p class="section-desc">End-to-end IT delivery, ERP implementation, and digital transformation projects — updated as new work is completed.</p>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <!-- ── 1. SCHOOLFLOW IMPLEMENTATION ─────────────────── -->
+    <div class="project-card reveal" style="--card-accent:#0D7377;">
+      <span class="card-status-badge badge-live">Live</span>
+      <div class="card-category">EdTech · End-to-End Delivery</div>
+      <div class="card-title">School Flow App</div>
+      <div class="card-subtitle">Digital School Management Platform — Full Delivery Case Study</div>
+      <p class="card-desc">
+        End-to-end delivery of a digital platform replacing paper-based school administration across student registration, academic reporting, and fee management. Covers stakeholder analysis, technical architecture, offline-first design, 6-phase implementation, UAT, and go-live.
+      </p>
+      <div class="card-components">
+        <span class="card-chip">Case Study</span>
+        <span class="card-chip">Implementation Guide</span>
+        <span class="card-chip">UAT Plan & Test Cases</span>
+        <span class="card-chip">PM Template Pack</span>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-val">24 Weeks</span></div>
+        <div class="meta-item"><span class="meta-label">Sector</span><span class="meta-val">Education</span></div>
+        <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">React · Node · PostgreSQL</span></div>
+      </div>
+      <div class="card-actions">
+        <a href="SchoolFlow_Case_Study.docx" class="card-btn card-btn-primary" download>⬇ Case Study</a>
+        <a href="SchoolFlow_Implementation_Guide.html" class="card-btn card-btn-secondary" target="_blank">🌐 Interactive Guide</a>
+      </div>
+    </div>
+
+    <!-- ── 2. ERPNEXT IMPLEMENTATION ─────────────────────── -->
+    <div class="project-card reveal" style="--card-accent:#1B3A6B;">
+      <span class="card-status-badge badge-wip">In Progress</span>
+      <div class="card-category">ERP · Construction Industry</div>
+      <div class="card-title">ERPNext</div>
+      <div class="card-subtitle">ERP Implementation Case Study for a Construction Company</div>
+      <p class="card-desc">
+        Full ERP implementation at Geocom Company Limited — a construction and survey firm. Covers the complete delivery lifecycle from business challenge and requirements analysis through to go-live and change management.
+      </p>
+      <div class="card-components">
+        <span class="card-chip">Business Challenge</span>
+        <span class="card-chip">Requirements</span>
+        <span class="card-chip">Process Mapping</span>
+        <span class="card-chip">UAT</span>
+        <span class="card-chip">Risk Register</span>
+        <span class="card-chip">Go-Live Plan</span>
+        <span class="card-chip">Change Management</span>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-label">Sector</span><span class="meta-val">Construction & Survey</span></div>
+        <div class="meta-item"><span class="meta-label">Platform</span><span class="meta-val">ERPNext / Frappe</span></div>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn card-btn-primary" onclick="alert('Coming soon — document in progress.')">⬇ Case Study</a>
+        <a href="#contact" class="card-btn card-btn-secondary">Contact</a>
+      </div>
+    </div>
+
+    <!-- ── 3. IT SERVICE DESK & OPERATIONS ───────────────── -->
+    <div class="project-card reveal" style="--card-accent:#5B21B6;">
+      <span class="card-status-badge badge-wip">In Progress</span>
+      <div class="card-category">IT Operations · Service Management</div>
+      <div class="card-title">IT Service Desk & Operations Framework</div>
+      <div class="card-subtitle">Incident Management · SLA Design · Escalation Matrix</div>
+      <p class="card-desc">
+        Design and implementation of a structured IT service desk framework — covering incident management workflows, SLA design, escalation matrices, and ticket routing. Built to bring operational rigour to IT support in a multi-department environment.
+      </p>
+      <div class="card-components">
+        <span class="card-chip">Incident Management</span>
+        <span class="card-chip">SLA Design</span>
+        <span class="card-chip">Escalation Matrix</span>
+        <span class="card-chip">Ticket Workflow</span>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-label">Type</span><span class="meta-val">Framework Design</span></div>
+        <div class="meta-item"><span class="meta-label">Sector</span><span class="meta-val">IT Operations</span></div>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn card-btn-primary" onclick="alert('Coming soon — document in progress.')">⬇ Framework</a>
+        <a href="#contact" class="card-btn card-btn-secondary">Contact</a>
+      </div>
+    </div>
+
+    <!-- ── 4. GEOCOM DIGITAL TRANSFORMATION ──────────────── -->
+    <div class="project-card reveal" style="--card-accent:#0D7377;">
+      <span class="card-status-badge badge-live">Live</span>
+      <div class="card-category">Digital Transformation · Construction</div>
+      <div class="card-title">Geocom Digital Transformation</div>
+      <div class="card-subtitle">Digitizing Paper-Based Workflows Across Six Departments</div>
+      <p class="card-desc">
+        Led the IT delivery of a 4-month digital transformation at Geocom Company Limited — replacing manual workflows across HR, Finance, Document Management, Field Operations, Procurement, and the PMO with Google Workspace and ClickUp.
+      </p>
+      <div class="card-components">
+        <span class="card-chip">Google Workspace</span>
+        <span class="card-chip">ClickUp</span>
+        <span class="card-chip">Change Management</span>
+        <span class="card-chip">~18 Staff</span>
+        <span class="card-chip">6 Departments</span>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-val">4 Months</span></div>
+        <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">IT Lead</span></div>
+        <div class="meta-item"><span class="meta-label">Sector</span><span class="meta-val">Construction & GIS</span></div>
+      </div>
+      <div class="card-actions">
+        <a href="Geocom_DT_Case_Study.docx" class="card-btn card-btn-primary" download>⬇ Case Study</a>
+        <a href="Geocom_DT_Project_Pack.docx" class="card-btn card-btn-secondary" download>⬇ Project Pack</a>
+      </div>
+    </div>
+
+    <!-- ── 5. DIGITAL TRANSFORMATION ROADMAP ─────────────── -->
+    <div class="project-card reveal" style="--card-accent:#B45309;">
+      <span class="card-status-badge badge-wip">In Progress</span>
+      <div class="card-category">Strategy · Digital Transformation</div>
+      <div class="card-title">Digital Transformation Roadmap</div>
+      <div class="card-subtitle">Current State → Future State → Implementation Roadmap</div>
+      <p class="card-desc">
+        A structured digital transformation roadmap framework covering current state assessment, future state design, phased implementation planning, and staff training plan — applicable to any organisation embarking on a digital journey.
+      </p>
+      <div class="card-components">
+        <span class="card-chip">Current State Assessment</span>
+        <span class="card-chip">Future State Design</span>
+        <span class="card-chip">Implementation Roadmap</span>
+        <span class="card-chip">Training Plan</span>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-label">Type</span><span class="meta-val">Strategy Document</span></div>
+        <div class="meta-item"><span class="meta-label">Audience</span><span class="meta-val">C-Suite · IT Leads</span></div>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn card-btn-primary" onclick="alert('Coming soon — document in progress.')">⬇ Roadmap</a>
+        <a href="#contact" class="card-btn card-btn-secondary">Contact</a>
+      </div>
+    </div>
+
+    <!-- ── 6. PM TEMPLATE PACK ────────────────────────────── -->
+    <div class="project-card reveal" style="--card-accent:#1B3A6B;">
+      <span class="card-status-badge badge-live">Live</span>
+      <div class="card-category">Project Management · Templates</div>
+      <div class="card-title">PM Universal Template Pack</div>
+      <div class="card-subtitle">Charter · Risk Register · Stakeholder Register · Schedule</div>
+      <p class="card-desc">
+        A professional set of four reusable project management templates — adaptable to any project type. Built to PMI/PMBOK standards with automated risk scoring, conditional formatting, and dropdown fields. Available in both DOCX and Excel.
+      </p>
+      <div class="card-components">
+        <span class="card-chip">Project Charter</span>
+        <span class="card-chip">Risk Register</span>
+        <span class="card-chip">Stakeholder Register</span>
+        <span class="card-chip">Implementation Schedule</span>
+        <span class="card-chip">PMBOK Aligned</span>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-label">Format</span><span class="meta-val">Excel + DOCX</span></div>
+        <div class="meta-item"><span class="meta-label">Standard</span><span class="meta-val">PMI / PMBOK</span></div>
+      </div>
+      <div class="card-actions">
+        <a href="PM_Universal_Template_Pack.xlsx" class="card-btn card-btn-primary" download>⬇ Excel Pack</a>
+        <a href="PM_Universal_Template_Pack.docx" class="card-btn card-btn-secondary" download>⬇ Word Pack</a>
+      </div>
+    </div>
+    <!-- ── END PORTFOLIO CARDS ────────────────────────────── -->
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TECHNOLOGY STACK
+══════════════════════════════════════════ -->
+<section id="techstack">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Tools & Platforms</div>
+      <h2 class="section-title">Technology <em>Stack</em></h2>
+    </div>
+    <p class="section-desc">Platforms and tools used across project delivery, ERP implementation, and IT operations work.</p>
+  </div>
+
+  <div class="tech-grid">
+    <div class="tech-card reveal">
+      <div class="tech-icon"><img width="35" height="35" src="https://img.icons8.com/officel/80/technology.png" alt="technology"/></div>
+      <div class="tech-cat">ERP Platform</div>
+      <div class="tech-name">ERPNext</div>
+      <div class="tech-desc">ERP implementation, configuration, module setup, and go-live delivery</div>
+    </div>
+    <div class="tech-card reveal">
+      <div class="tech-icon"><img width="35" height="35" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-project-management-project-management-flaticons-flat-flat-icons-2.png" alt="external-project-management-project-management-flaticons-flat-flat-icons-2"/></div>
+      <div class="tech-cat">Project Management</div>
+      <div class="tech-name">Jira</div>
+      <div class="tech-desc">Agile project tracking, sprint planning, backlog management, issue logging</div>
+    </div>
+    <div class="tech-card reveal">
+      <div class="tech-icon"><img width="35" height="35" src="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/external-project-management-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png" alt="external-project-management-seo-and-marketing-smashingstocks-isometric-smashing-stocks"/></div>
+      <div class="tech-cat">Project Management</div>
+      <div class="tech-name">Microsoft Project</div>
+      <div class="tech-desc">WBS creation, Gantt charts, resource planning, and schedule management</div>
+    </div>
+    <div class="tech-card reveal">
+      <div class="tech-icon"><img width="35" height="35" src="https://img.icons8.com/fluency/48/microsoft-365.png" alt="microsoft-365"/></div>
+      <div class="tech-cat">Productivity Suite</div>
+      <div class="tech-name">Microsoft 365</div>
+      <div class="tech-desc">Teams, SharePoint, OneDrive, Outlook — enterprise collaboration and document management</div>
+    </div>
+    <div class="tech-card reveal">
+      <div class="tech-icon"><img width="35" height="35" src="https://img.icons8.com/3d-stickle/100/data-analytics-report.png" alt="data-analytics-report"/></div>
+      <div class="tech-cat">Data & Reporting</div>
+      <div class="tech-name">Excel / Power BI</div>
+      <div class="tech-desc">Dashboard design, project tracking, KPI reporting, and data visualisation</div>
+    </div>
+    <div class="tech-card reveal">
+      <div class="tech-icon"><img width="35" height="35" src="https://img.icons8.com/color/48/collaboration-female-male.png" alt="collaboration-female-male"/></div>
+      <div class="tech-cat">Collaboration</div>
+      <div class="tech-name">SharePoint</div>
+      <div class="tech-desc">Document management, intranet design, team sites, and access control</div>
+    </div>
+    <div class="tech-card reveal">
+      <div class="tech-icon"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/github.png" alt="github"/></div>
+      <div class="tech-cat">Version Control</div>
+      <div class="tech-name">GitHub</div>
+      <div class="tech-desc">Source control, portfolio hosting (GitHub Pages), documentation versioning</div>
+    </div>
+    <div class="tech-card reveal">
+      <div class="tech-icon"><img width="35" height="35" src="https://img.icons8.com/external-flat-wichaiwi/64/external-platform-work-from-home-flat-wichaiwi.png" alt="external-platform-work-from-home-flat-wichaiwi"/></div>
+      <div class="tech-cat">Task Management</div>
+      <div class="tech-name">ClickUp</div>
+      <div class="tech-desc">Project portfolio management, task automation, team dashboards, and reporting</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SKILLS
+══════════════════════════════════════════ -->
+<section id="skills">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Capabilities</div>
+      <h2 class="section-title">Skills &amp; <em>Expertise</em></h2>
+    </div>
+    <p class="section-desc">Core competencies across IT project delivery, ERP implementation, and digital transformation.</p>
+  </div>
+
+  <div class="skills-layout">
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-label">IT Project Delivery</div>
+        <div class="skill-item">
+          <span class="skill-name">Project Planning & Control</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92%"></div></div>
+          <span class="skill-pct">92%</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">ERP Implementation</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Digital Transformation</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div>
+          <span class="skill-pct">88%</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Stakeholder Management</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Risk Management</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="84%"></div></div>
+          <span class="skill-pct">84%</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">IT Operations</div>
+        <div class="skill-item">
+          <span class="skill-name">IT Infrastructure & Support</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="86%"></div></div>
+          <span class="skill-pct">86%</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Systems Administration</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Change Management</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="83%"></div></div>
+          <span class="skill-pct">83%</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Data Management & Reporting</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+          <span class="skill-pct">80%</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-label">Certifications</div>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-icon"><img width="25" height="25" src="https://img.icons8.com/fluency/48/certification--v1.png" alt="certification--v1"/></div>
+            <div>
+              <div class="cert-name">PMP® — Project Management Professional</div>
+              <div class="cert-issuer">Project Management Institute (PMI)</div>
+            </div>
+            <div class="cert-year">Active</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon"><img width="25" height="25" src="https://img.icons8.com/emoji/48/graduation-cap-emoji.png" alt="graduation-cap-emoji"/></div>
+            <div>
+              <div class="cert-name">EMBA — Project Management</div>
+              <div class="cert-issuer">University of Ghana Business School</div>
+            </div>
+            <div class="cert-year">2024</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon"><img width="25" height="25" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-tech-support-engineering-flaticons-lineal-color-flat-icons.png" alt="external-tech-support-engineering-flaticons-lineal-color-flat-icons"/></div>
+            <div>
+              <div class="cert-name">ITIL 4 Foundation</div>
+              <div class="cert-issuer">IT Service Management</div>
+            </div>
+            <div class="cert-year">In Progress</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-group" style="margin-top:28px;">
+        <div class="skill-group-label">Delivery Domains</div>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-icon"><img width="25" height="25" src="https://img.icons8.com/officel/80/technology.png" alt="technology"/></div>
+            <div>
+              <div class="cert-name">ERP Implementation</div>
+              <div class="cert-issuer">ERPNext · Geocom Company Limited · Construction sector</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon"><img width="25" height="25" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-digital-transformation-no-code-flaticons-flat-flat-icons.png" alt="external-digital-transformation-no-code-flaticons-flat-flat-icons"/></div>
+            <div>
+              <div class="cert-name">Digital Transformation</div>
+              <div class="cert-issuer">Google Workspace · ClickUp · 6 departments · 18 staff</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon"><img width="25" height="25" src="https://img.icons8.com/fluency/48/national.png" alt="national"/></div>
+            <div>
+              <div class="cert-name">International Development</div>
+              <div class="cert-issuer">AfCFTA Secretariat · NTM Division · Trade Policy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     EXPERIENCE
+══════════════════════════════════════════ -->
+<section id="experience">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Work <em>Experience</em></h2>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">2024 — Present</div>
+      <div class="timeline-role">Programme Coordination Intern</div>
+      <div class="timeline-org">AfCFTA Secretariat — NTM Division <span class="org-badge">Current</span></div>
+      <p class="timeline-desc">Supporting programme coordination and IT operations within the Non-Tariff Measures Division of the African Continental Free Trade Area Secretariat. Contributing to data management, stakeholder engagement, and administrative digitization across the continental trade framework.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Prior Role</div>
+      <div class="timeline-role">IT Lead — Digital Transformation & ERP</div>
+      <div class="timeline-org">Geocom Company Limited <span class="org-badge">Construction & GIS</span></div>
+      <p class="timeline-desc">Led the IT delivery of two major initiatives: a 4-month digital transformation replacing paper workflows across 6 departments with Google Workspace and ClickUp, and the subsequent ERPNext implementation — covering requirements, process mapping, UAT, go-live planning, and change management.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Prior Role</div>
+      <div class="timeline-role">Project Manager</div>
+      <div class="timeline-org">Samasoft Technologies</div>
+      <p class="timeline-desc">Led end-to-end delivery of technology projects, managing cross-functional teams, client stakeholder relationships, project timelines, and risk registers across multiple concurrent engagements.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Prior Role</div>
+      <div class="timeline-role">HR & Admin Officer</div>
+      <div class="timeline-org">Ghacem Limited <span class="org-badge">Industrial</span></div>
+      <p class="timeline-desc">Managed personnel records, onboarding processes, and HR administration within a large industrial organization — providing the people and process management foundation for a career pivot into IT project delivery.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     BLOG / INSIGHTS
+     ──────────────────────────────────────────────────
+     ADD NEW POSTS: copy a .blog-card block and update.
+══════════════════════════════════════════════════ -->
+<section id="blog">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Thinking Out Loud</div>
+      <h2 class="section-title">Insights &amp; <em>Lessons</em></h2>
+    </div>
+    <p class="section-desc">Practical lessons from the field — ERP, digital transformation, and IT project delivery.</p>
+  </div>
+
+  <div class="blog-grid">
+
+    <a href="#" class="blog-card reveal">
+      <div class="blog-tag">EdTech · Delivery</div>
+      <h3 class="blog-title">Lessons from SchoolFlow: What Delivering an EdTech Platform Taught Me About IT Project Management</h3>
+      <p class="blog-excerpt">Building SchoolFlow was as much a project management exercise as it was a technical one. Here's what a 24-week delivery in an emerging market environment taught me about scope, offline architecture, and stakeholder trust.</p>
+      <div class="blog-meta">
+        <span>June 2026</span>
+        <span class="blog-read-time">8 min read</span>
+        <span class="blog-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card reveal">
+      <div class="blog-tag">ERP · Risk</div>
+      <h3 class="blog-title">ERP Implementation Risks Nobody Warns You About — And How to Mitigate Them</h3>
+      <p class="blog-excerpt">Most ERP projects fail not because of the software, but because of underestimated change management, poor data migration planning, and unrealistic go-live timelines. The lessons I learned at Geocom apply to any organisation.</p>
+      <div class="blog-meta">
+        <span>May 2026</span>
+        <span class="blog-read-time">10 min read</span>
+        <span class="blog-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card reveal">
+      <div class="blog-tag">UAT · Quality</div>
+      <h3 class="blog-title">What UAT Taught Me: Why User Acceptance Testing Is the Most Underrated Phase in IT Delivery</h3>
+      <p class="blog-excerpt">UAT is consistently rushed, underfunded, or skipped entirely. After writing 75 test cases for SchoolFlow and running three test cycles, I've come to believe it's the phase that separates successful implementations from expensive disasters.</p>
+      <div class="blog-meta">
+        <span>April 2026</span>
+        <span class="blog-read-time">7 min read</span>
+        <span class="blog-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card reveal">
+      <div class="blog-tag">Digital Transformation</div>
+      <h3 class="blog-title">Why Digital Transformation Fails — And the Three Things That Actually Make It Work</h3>
+      <p class="blog-excerpt">After leading a digital transformation across six departments at a construction firm, I've identified the three non-negotiables that separate transformations that stick from those that quietly revert to spreadsheets within six months.</p>
+      <div class="blog-meta">
+        <span>March 2026</span>
+        <span class="blog-read-time">9 min read</span>
+        <span class="blog-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CONTACT
+     Update your email, LinkedIn, and phone here
+══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-heading">Let's work <em>together.</em></h2>
+      <p class="contact-sub">
+        Open to IT project management, ERP implementation, and digital transformation roles.
+        PMP-certified and available for full-time, contract, and remote opportunities.
+        Based in Ghana — open to international and remote roles.
+      </p>
+    </div>
+
+    <div class="contact-links">
+      <a href="mailto:your.email@gmail.com" class="contact-link">
+        <div class="contact-link-icon"><img width="15" height="15" src="https://img.icons8.com/emoji/48/e-mail.png" alt="e-mail"/></div>
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">alorvor.gh@outlook.com</div>
+        </div>
+        <span class="contact-link-arrow">→</span>
+      </a>
+      <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-link">
+        <div class="contact-link-icon"><img width="15" height="15" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin"/></div>
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">www.linkedin.com/in/alorvor-gh</div>
+        </div>
+        <span class="contact-link-arrow">→</span>
+      </a>
+      <a href="tel:+233000000000" class="contact-link">
+        <div class="contact-link-icon"><img width="15" height="15" src="https://img.icons8.com/fluency/48/contact-card.png" alt="contact-card"/></div>
+        <div>
+          <div class="contact-link-label">Phone</div>
+          <div class="contact-link-val">+233 (0) 507791966</div>
+        </div>
+        <span class="contact-link-arrow">→</span>
+      </a>
+      <a href="#" class="contact-link">
+        <div class="contact-link-icon"><img width="15" height="15" src="https://img.icons8.com/fluency/48/marker.png" alt="marker"/></div>
+        <div>
+          <div class="contact-link-label">Location</div>
+          <div class="contact-link-val">Tema, Greater Accra, Ghana — Remote Friendly</div>
+        </div>
+        <span class="contact-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo"></div>
+  <div>© 2026</div>
+</footer>
+
+
+<script>
+// ── Cursor ──
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top  = e.clientY + 'px';
+});
+document.querySelectorAll('a,button,.project-card,.tech-card,.blog-card').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+});
+
+// ── Sticky nav ──
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── Reveal on scroll ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width;
+      });
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal, .timeline-item').forEach(el => observer.observe(el));
+
+// ── Stagger cards ──
+document.querySelectorAll('.project-card.reveal').forEach((c,i) => {
+  c.style.transitionDelay = `${i * 0.1}s`;
+});
+document.querySelectorAll('.tech-card.reveal').forEach((c,i) => {
+  c.style.transitionDelay = `${i * 0.07}s`;
+});
+document.querySelectorAll('.blog-card.reveal').forEach((c,i) => {
+  c.style.transitionDelay = `${i * 0.1}s`;
+});
+</script>
+</body>
+</html>
