@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Godwin Kofi Alorvor</title>
-<meta name="description" content= "Project Manager Portfolio">
+<title>Godwin Kofi Alorvor — IT Delivery &amp; Digital Transformation</title>
+<meta name="description" content="PMP-certified project professional specializing in IT delivery, ERP implementation, and digital transformation. Based in Tema, Ghana.">
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -218,7 +218,27 @@ html[data-theme="dark"] .icon-moon{ display:block; }
 .hero-info-label{ color:var(--muted); min-width:70px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:.4px; margin-top:1px; }
 .hero-info-val{ color:var(--ink-soft); font-weight:500; }
 
-/* ═══════════════════════════ PORTFOLIO — BENTO ═══════════════════════════ */
+/* ═══════════════════════════ HOW I WORK ═══════════════════════════ */
+#howiwork{ background:var(--bg); padding-bottom:88px; }
+.howiwork-head{ text-align:center; max-width:680px; margin:0 auto 56px; }
+.howiwork-head .eyebrow{ justify-content:center; }
+.howiwork-head .eyebrow::before{ display:none; }
+.howiwork-title{ font-family:var(--display); font-size:clamp(28px,3.4vw,38px); font-weight:600; letter-spacing:-.8px; margin:12px 0 20px; }
+.howiwork-quote{ font-family:var(--display); font-style:italic; font-size:15px; color:var(--ink-soft); line-height:1.85; }
+.phases-row{ position:relative; display:flex; align-items:flex-start; justify-content:space-between; gap:16px; max-width:1080px; margin:0 auto; }
+.phases-row::before{ content:''; position:absolute; top:38px; left:38px; right:38px; border-top:2px dotted var(--border); z-index:0; }
+.phase{ position:relative; z-index:1; flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; }
+.phase-icon-wrap{
+  width:76px; height:76px; border-radius:50%; border:1.5px solid var(--border); background:var(--surface);
+  display:flex; align-items:center; justify-content:center; color:var(--accent); margin-bottom:20px; font-size:26px;
+  transition:border-color .25s, transform .25s var(--ease); flex-shrink:0;
+}
+.phase:hover .phase-icon-wrap{ border-color:var(--accent); transform:translateY(-3px); }
+.phase-icon-wrap .icon{ width:28px; height:28px; }
+.phase-name{ font-family:var(--display); font-weight:600; font-size:14.5px; letter-spacing:-.1px; margin-bottom:16px; }
+.phase-list{ text-align:left; font-size:11.5px; color:var(--muted); line-height:1.85; list-style:decimal; padding-left:18px; max-width:230px; }
+
+
 #portfolio{ background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .portfolio-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .p-span-2{ grid-column:span 2; }
@@ -271,22 +291,16 @@ html[data-theme="dark"] .icon-moon{ display:block; }
 .tech-name{ font-size:14.5px; font-weight:700; }
 .tech-desc{ font-size:12px; color:var(--muted); line-height:1.55; }
 
-/* ═══════════════════════════ SKILLS ═══════════════════════════ */
+/* ═══════════════════════════ SKILLS / CERTIFICATIONS ═══════════════════════════ */
 #skills{ background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-.skills-layout{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
-.skill-group{ margin-bottom:34px; }
 .skill-group-label{
   font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase;
-  color:var(--accent); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  color:var(--accent); display:flex; align-items:center; gap:10px;
 }
 .skill-group-label::after{ content:''; flex:1; height:1px; background:var(--border); }
-.skill-item{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; gap:14px; }
-.skill-name{ font-size:13px; color:var(--ink-soft); font-weight:500; min-width:180px; }
-.skill-bar-track{ flex:1; height:4px; background:var(--border); border-radius:100px; overflow:hidden; }
-.skill-bar-fill{ height:100%; background:var(--accent); border-radius:100px; width:0; transition:width 1.1s var(--ease); }
-.skill-pct{ font-family:var(--mono); font-size:11px; color:var(--muted); min-width:32px; text-align:right; }
-.cert-list{ display:flex; flex-direction:column; gap:10px; }
-.cert-item{ display:flex; align-items:center; gap:14px; padding:14px 16px; background:var(--bg); border-radius:var(--radius-sm); border:1px solid var(--border); }
+.cert-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.cert-item{ display:flex; align-items:center; gap:14px; padding:18px 18px; background:var(--bg); border-radius:var(--radius-md); border:1px solid var(--border); transition:transform .25s var(--ease), border-color .2s, box-shadow .25s; }
+.cert-item:hover{ transform:translateY(-3px); border-color:color-mix(in srgb, var(--accent) 35%, var(--border)); box-shadow:var(--shadow-sm); }
 .cert-icon{ width:36px; height:36px; border-radius:9px; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px; }
 .cert-name{ font-size:13px; font-weight:600; }
 .cert-issuer{ font-size:11.5px; color:var(--muted); margin-top:1px; }
@@ -320,22 +334,38 @@ html[data-theme="dark"] .icon-moon{ display:block; }
 .org-badge{ font-size:9.5px; font-weight:600; padding:3px 9px; border-radius:100px; background:var(--accent-soft); color:var(--accent); letter-spacing:.4px; text-transform:uppercase; }
 .t-desc{ font-size:13.5px; color:var(--ink-soft); line-height:1.72; }
 
-/* ═══════════════════════════ BLOG ═══════════════════════════ */
-#blog{ background:var(--surface); border-top:1px solid var(--border); }
-.blog-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-.blog-card{
-  background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-lg);
-  padding:28px; text-decoration:none; display:block; color:var(--ink);
-  transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
+/* ═══════════════════════════ ABOUT ═══════════════════════════ */
+#about{ background:var(--surface); border-top:1px solid var(--border); }
+.about-layout{ display:grid; grid-template-columns:1.25fr .75fr; gap:60px; align-items:start; }
+.about-lede{ font-family:var(--display); font-size:22px; font-weight:500; letter-spacing:-.3px; line-height:1.45; color:var(--ink); margin-bottom:22px; }
+.about-text p{ font-size:14.5px; color:var(--ink-soft); line-height:1.85; margin-bottom:16px; }
+.about-text p:last-child{ margin-bottom:0; }
+.about-side-label{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--accent); margin-bottom:18px; display:flex; align-items:center; gap:10px;
 }
-.blog-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:color-mix(in srgb, var(--accent) 35%, var(--border)); }
-.blog-tag{ display:inline-block; padding:4px 11px; border-radius:100px; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.6px; background:var(--accent-soft); color:var(--accent); margin-bottom:14px; }
-.blog-title{ font-family:var(--display); font-size:19px; font-weight:600; line-height:1.3; margin-bottom:10px; letter-spacing:-.2px; }
-.blog-excerpt{ font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:18px; }
-.blog-meta{ display:flex; align-items:center; justify-content:space-between; font-size:11.5px; color:var(--muted); padding-top:16px; border-top:1px solid var(--border); }
-.blog-read{ font-family:var(--mono); font-size:10.5px; color:var(--accent); }
-.blog-arrow{ color:var(--accent); transition:transform .2s; display:flex; }
-.blog-card:hover .blog-arrow{ transform:translateX(4px); }
+.about-side-label::after{ content:''; flex:1; height:1px; background:var(--border); }
+.about-facts{ display:flex; flex-direction:column; gap:12px; }
+.about-fact{
+  display:flex; align-items:flex-start; gap:14px; padding:16px 18px; background:var(--bg);
+  border:1px solid var(--border); border-radius:var(--radius-md);
+}
+.about-fact-icon{ width:36px; height:36px; border-radius:9px; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.about-fact-title{ font-size:13px; font-weight:600; color:var(--ink); margin-bottom:2px; }
+.about-fact-desc{ font-size:12px; color:var(--muted); line-height:1.6; }
+
+/* ═══════════════════════════ WHAT I DO ═══════════════════════════ */
+.whatido-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:52px; }
+.whatido-card{
+  background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:22px; display:flex; flex-direction:column; gap:12px;
+  transition:transform .25s var(--ease), border-color .2s, box-shadow .25s;
+}
+.whatido-card:hover{ transform:translateY(-3px); border-color:color-mix(in srgb, var(--accent) 35%, var(--border)); box-shadow:var(--shadow-sm); }
+.whatido-icon{ width:38px; height:38px; border-radius:10px; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; }
+.whatido-title{ font-family:var(--display); font-size:14.5px; font-weight:600; letter-spacing:-.1px; }
+.whatido-desc{ font-size:12.5px; color:var(--muted); line-height:1.6; }
+
 
 /* ═══════════════════════════ CONTACT ═══════════════════════════ */
 #contact{ background:var(--night); color:var(--night-ink); position:relative; overflow:hidden; }
@@ -385,6 +415,7 @@ footer{
   .portfolio-grid{ grid-template-columns:repeat(2,1fr); }
   .p-span-2{ grid-column:span 2; }
   .tech-grid{ grid-template-columns:repeat(3,1fr); }
+  .whatido-grid{ grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:860px){
   .nav-links{ display:none; }
@@ -395,9 +426,13 @@ footer{
   .section-desc{ text-align:left; max-width:100%; }
   .portfolio-grid{ grid-template-columns:1fr; }
   .p-span-2{ grid-column:span 1; }
+  .phases-row{ flex-direction:column; gap:40px; }
+  .phases-row::before{ display:none; }
+  .phase-list{ max-width:100%; }
   .tech-grid{ grid-template-columns:repeat(2,1fr); }
-  .skills-layout{ grid-template-columns:1fr; gap:40px; }
-  .blog-grid{ grid-template-columns:1fr; }
+  .whatido-grid{ grid-template-columns:1fr; }
+  .cert-grid{ grid-template-columns:1fr; }
+  .about-layout{ grid-template-columns:1fr; gap:36px; }
   .contact-inner{ grid-template-columns:1fr; gap:44px; }
   .footer-inner{ flex-direction:column; text-align:center; }
 
@@ -433,6 +468,14 @@ footer{
 <symbol id="i-award" viewBox="0 0 24 24"><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/><circle cx="12" cy="8" r="6"/></symbol>
 <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
 <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m6.08 9.5-3.5 1.6a1 1 0 0 0 0 1.81l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"/><path d="m6.08 14.5-3.5 1.6a1 1 0 0 0 0 1.81l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V3"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.79 0l3.66-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.56 2.27a2 2 0 0 1-1.79 0L9.9 18.45a2 2 0 0 0-1.79 0l-3.66 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.56-2.27a2 2 0 0 1 1.79 0z"/><path d="M15 5.76v15M9 3.24v15"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
 </defs>
 </svg>
 
@@ -444,11 +487,12 @@ footer{
       <span class="nav-logo-text">Godwin Alorvor <span>· PMP®</span></span>
     </a>
     <ul class="nav-links">
+      <li><a href="#howiwork">How I Work</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#techstack">Tech Stack</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#blog">Insights</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
     <div class="nav-right">
       <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
@@ -468,11 +512,12 @@ footer{
     <button class="icon-btn" id="menu-close" aria-label="Close menu"><svg class="icon"><use href="#i-x"/></svg></button>
   </div>
   <ul>
+    <li><a href="#howiwork">How I Work</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#techstack">Tech Stack</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#blog">Insights</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </div>
@@ -485,12 +530,12 @@ footer{
       <div class="hero-status reveal visible">
         <span class="status-dot"></span> Open to Project Management &amp; Digital Transformation roles
       </div>
-      <h1>Godwin Kofi <span class="accent">ALORVOR</span></h1>
-      <div class="hero-headline">PMP® · Project Manager · Systems Implementation · Digital Transformation</div>
+      <h1>Godwin Kofi <span class="accent">Alorvor</span></h1>
+      <div class="hero-headline">PMP® · IT Project Management · Systems Implementation · Digital Transformation</div>
       <p class="hero-lede">
-        <strong>PMP-certified project professional</strong> specializing in IT delivery, systems
+        <strong>PMP-certified project professional</strong> specializing in IT delivery, ERP
         implementation, and digital transformation. I turn complex operational challenges into
-        structured, delivered solutions; from legacy paper workflows to enterprise systems.
+        structured, delivered solutions — from legacy paper workflows to enterprise systems.
       </p>
       <div class="hero-tags">
         <span class="tag">PMP® Certified</span>
@@ -499,7 +544,7 @@ footer{
         <span class="tag">IT Operations</span>
       </div>
       <div class="hero-cta">
-        <a href="#portfolio" class="btn btn-primary">View Implementation Portfolio <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+        <a href="Godwin_Kofi_Alorvor_CV.pdf" download class="btn btn-primary">Download CV <svg class="icon"><use href="#i-download"/></svg></a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
       </div>
     </div>
@@ -528,7 +573,7 @@ footer{
           <div class="hero-info-row">
             <svg class="icon"><use href="#i-briefcase"/></svg>
             <span class="hero-info-label">Recent</span>
-            <span class="hero-info-val">Program Assistant, AfCFTA Secretariat</span>
+            <span class="hero-info-val">Program Assistant, AfCFTA Secretariat — NTM Division (contract completed)</span>
           </div>
           <div class="hero-info-row">
             <svg class="icon"><use href="#i-target"/></svg>
@@ -541,6 +586,64 @@ footer{
             <span class="hero-info-val">PM · Implementation &amp; Delivery Specialist · Digital Transformation roles</span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW I WORK ═══ -->
+<section id="howiwork">
+  <div class="wrap">
+    <div class="howiwork-head reveal">
+      <div class="eyebrow">Process</div>
+      <h2 class="howiwork-title">How I Work</h2>
+      <p class="howiwork-quote">"I don't believe in shortcuts — I believe in structure. Every phase has a job to do, and skipping one always shows up later."</p>
+    </div>
+
+    <div class="phases-row reveal">
+      <div class="phase">
+        <div class="phase-icon-wrap"><svg class="icon"><use href="#i-flag"/></svg></div>
+        <div class="phase-name">Initiation Phase</div>
+        <ol class="phase-list">
+          <li>Define project goals &amp; success criteria</li>
+          <li>Identify &amp; analyze key stakeholders</li>
+          <li>Assess current-state processes &amp; pain points</li>
+          <li>Define scope, risks &amp; constraints</li>
+          <li>Draft the project charter</li>
+        </ol>
+      </div>
+      <div class="phase">
+        <div class="phase-icon-wrap"><svg class="icon"><use href="#i-map"/></svg></div>
+        <div class="phase-name">Planning Phase</div>
+        <ol class="phase-list">
+          <li>Build the project roadmap &amp; WBS</li>
+          <li>Allocate resources &amp; assign ownership</li>
+          <li>Define milestones &amp; the risk register</li>
+          <li>Map current-state to future-state processes</li>
+          <li>Set up the change management plan</li>
+        </ol>
+      </div>
+      <div class="phase">
+        <div class="phase-icon-wrap"><svg class="icon"><use href="#i-settings"/></svg></div>
+        <div class="phase-name">Execution Phase</div>
+        <ol class="phase-list">
+          <li>Manage tasks &amp; phase-by-phase delivery</li>
+          <li>Track progress against the plan</li>
+          <li>Run UAT &amp; resolve issues</li>
+          <li>Communicate status to stakeholders</li>
+          <li>Adjust the plan as risks emerge</li>
+        </ol>
+      </div>
+      <div class="phase">
+        <div class="phase-icon-wrap"><svg class="icon"><use href="#i-badge-check"/></svg></div>
+        <div class="phase-name">Closure Phase</div>
+        <ol class="phase-list">
+          <li>Handover deliverables &amp; documentation</li>
+          <li>Support go-live &amp; early adoption</li>
+          <li>Review performance against success criteria</li>
+          <li>Release resources &amp; close out</li>
+          <li>Long-term monitoring &amp; lessons learned</li>
+        </ol>
       </div>
     </div>
   </div>
@@ -780,69 +883,50 @@ footer{
     <div class="section-head reveal">
       <div>
         <div class="eyebrow">Capabilities</div>
-        <h2 class="section-title">Skills &amp; Expertise</h2>
+        <h2 class="section-title">What I Do</h2>
       </div>
-      <p class="section-desc">Core competencies across IT project delivery, ERP implementation, and digital transformation.</p>
+      <p class="section-desc">Core focus areas across IT project delivery, ERP implementation, and digital transformation.</p>
     </div>
 
-    <div class="skills-layout">
-      <div>
-        <div class="skill-group">
-          <div class="skill-group-label">IT Project Delivery</div>
-          <div class="skill-item"><span class="skill-name">Project Planning &amp; Control</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="92%"></div></div><span class="skill-pct">92%</span></div>
-          <div class="skill-item"><span class="skill-name">ERP Implementation</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div><span class="skill-pct">85%</span></div>
-          <div class="skill-item"><span class="skill-name">Digital Transformation</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div><span class="skill-pct">88%</span></div>
-          <div class="skill-item"><span class="skill-name">Stakeholder Management</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div><span class="skill-pct">90%</span></div>
-          <div class="skill-item"><span class="skill-name">Risk Management</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="84%"></div></div><span class="skill-pct">84%</span></div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">IT Operations</div>
-          <div class="skill-item"><span class="skill-name">IT Infrastructure &amp; Support</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="86%"></div></div><span class="skill-pct">86%</span></div>
-          <div class="skill-item"><span class="skill-name">Systems Administration</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div><span class="skill-pct">80%</span></div>
-          <div class="skill-item"><span class="skill-name">Change Management</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="83%"></div></div><span class="skill-pct">83%</span></div>
-          <div class="skill-item"><span class="skill-name">Data Management &amp; Reporting</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div><span class="skill-pct">80%</span></div>
-        </div>
+    <div class="whatido-grid">
+      <div class="whatido-card reveal">
+        <div class="whatido-icon"><svg class="icon"><use href="#i-target"/></svg></div>
+        <div class="whatido-title">Deliver IT Projects End-to-End</div>
+        <div class="whatido-desc">Plan, execute, and close technology initiatives — from charter and stakeholder alignment through UAT to go-live — on schedule and within scope.</div>
       </div>
+      <div class="whatido-card reveal">
+        <div class="whatido-icon"><svg class="icon"><use href="#i-layers"/></svg></div>
+        <div class="whatido-title">Implement &amp; Configure ERP Systems</div>
+        <div class="whatido-desc">Lead requirements gathering, process mapping, and go-live planning for platforms like ERPNext, with structured change management throughout.</div>
+      </div>
+      <div class="whatido-card reveal">
+        <div class="whatido-icon"><svg class="icon"><use href="#i-refresh"/></svg></div>
+        <div class="whatido-title">Drive Digital Transformation</div>
+        <div class="whatido-desc">Replace manual, paper-based workflows with structured digital systems — Google Workspace, ClickUp — across multiple departments at once.</div>
+      </div>
+      <div class="whatido-card reveal">
+        <div class="whatido-icon"><svg class="icon"><use href="#i-briefcase"/></svg></div>
+        <div class="whatido-title">Manage IT Operations &amp; Support</div>
+        <div class="whatido-desc">Oversee infrastructure, systems administration, and vendor relationships so day-to-day service delivery keeps teams productive.</div>
+      </div>
+    </div>
 
-      <div>
-        <div class="skill-group">
-          <div class="skill-group-label">Certifications</div>
-          <div class="cert-list">
-            <div class="cert-item">
-              <div class="cert-icon"><svg class="icon"><use href="#i-badge-check"/></svg></div>
-              <div><div class="cert-name">PMP® — Project Management Professional</div><div class="cert-issuer">Project Management Institute (PMI)</div></div>
-              <div class="cert-year">Active</div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon"><svg class="icon"><use href="#i-cap"/></svg></div>
-              <div><div class="cert-name">Executive MBA — Project Management</div><div class="cert-issuer">University of Ghana Business School</div></div>
-              <div class="cert-year"></div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon"><svg class="icon"><use href="#i-award"/></svg></div>
-              <div><div class="cert-name">ITIL 4 Foundation</div><div class="cert-issuer">IT Service Management</div></div>
-              <div class="cert-year">In Progress</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-group" style="margin-top:26px;">
-          <div class="skill-group-label">Delivery Domains</div>
-          <div class="cert-list">
-            <div class="cert-item">
-              <div class="cert-icon"><svg class="icon"><use href="#i-target"/></svg></div>
-              <div><div class="cert-name">Systems Implementation</div><div class="cert-issuer">ERPNext · Geocom Company Limited · Construction sector</div></div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon"><svg class="icon"><use href="#i-arrow-up-right"/></svg></div>
-              <div><div class="cert-name">Digital Transformation</div><div class="cert-issuer">Google Workspace · ClickUp · 6 departments</div></div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon"><svg class="icon"><use href="#i-briefcase"/></svg></div>
-              <div><div class="cert-name">International Development</div><div class="cert-issuer">AfCFTA Secretariat · Trade Policy</div></div>
-            </div>
-          </div>
-        </div>
+    <div class="skill-group-label" style="margin:52px 0 20px;">Certifications</div>
+    <div class="cert-grid">
+      <div class="cert-item reveal">
+        <div class="cert-icon"><svg class="icon"><use href="#i-badge-check"/></svg></div>
+        <div><div class="cert-name">PMP® — Project Management Professional</div><div class="cert-issuer">Project Management Institute (PMI)</div></div>
+        <div class="cert-year">Active</div>
+      </div>
+      <div class="cert-item reveal">
+        <div class="cert-icon"><svg class="icon"><use href="#i-cap"/></svg></div>
+        <div><div class="cert-name">EMBA — Project Management</div><div class="cert-issuer">University of Ghana Business School</div></div>
+        <div class="cert-year">2024</div>
+      </div>
+      <div class="cert-item reveal">
+        <div class="cert-icon"><svg class="icon"><use href="#i-award"/></svg></div>
+        <div><div class="cert-name">ITIL 4 Foundation</div><div class="cert-issuer">IT Service Management</div></div>
+        <div class="cert-year">In Progress</div>
       </div>
     </div>
   </div>
@@ -862,17 +946,17 @@ footer{
       <div class="t-row t-left">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-year">July 2025 – July 2026</div>
+          <div class="t-year">Aug 2025 – Jul 2026</div>
           <div class="t-role">Program Assistant</div>
-          <div class="t-org">AfCFTA Secretariat <span class="org-badge">Contract Completed</span></div>
-          <p class="t-desc">Supported programme coordination within the Non-Tariff Measures Division of the African Continental Free Trade Area Secretariat; facilitating trade policy tracking, operational governance, and multi-stakeholder engagement across African Member States.</p>
+          <div class="t-org">AfCFTA Secretariat — NTM Division <span class="org-badge">Contract Completed</span></div>
+          <p class="t-desc">Supported programme coordination within the Non-Tariff Measures Division of the African Continental Free Trade Area Secretariat — facilitating trade policy tracking, operational governance, and multi-stakeholder engagement across African Member States.</p>
         </div>
       </div>
 
       <div class="t-row t-right">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-year">Jan 2025 – July 2025</div>
+          <div class="t-year">Jan 2025 – Jul 2025</div>
           <div class="t-role">Project Manager</div>
           <div class="t-org">Samasoft Technologies <span class="org-badge">Ed-Tech</span></div>
           <p class="t-desc">Led end-to-end delivery of technology projects, managing cross-functional teams, client stakeholder relationships, project timelines, and risk registers across multiple concurrent engagements.</p>
@@ -882,62 +966,78 @@ footer{
       <div class="t-row t-left">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-year">April 2021 - Dec 2024</div>
+          <div class="t-year">Prior Role</div>
           <div class="t-role">IT Operations Officer</div>
           <div class="t-org">Geocom Company Limited <span class="org-badge">Construction &amp; GIS</span></div>
-          <p class="t-desc">Led the IT delivery of two major initiatives: a 4-month digital transformation replacing paper workflows across 6 departments with Google Workspace and ClickUp, and the subsequent ERP implementation, covering requirements, process mapping, UAT, go-live planning, and change management.</p>
+          <p class="t-desc">Led the IT delivery of two major initiatives: a 4-month digital transformation replacing paper workflows across 6 departments with Google Workspace and ClickUp, and the subsequent ERPNext implementation — covering requirements, process mapping, UAT, go-live planning, and change management.</p>
         </div>
       </div>
 
       <div class="t-row t-right">
         <div class="t-dot"></div>
         <div class="t-card">
-          <div class="t-year">Sept 2018 - Dec 2019</div>
+          <div class="t-year">Prior Role</div>
           <div class="t-role">HR Assistant</div>
           <div class="t-org">Ghacem Limited <span class="org-badge">Manufacturing</span></div>
-          <p class="t-desc">Managed personnel records, onboarding, and HR administration in a large industrial organisation—providing the people-and-process foundation for a career pivot into IT project delivery.</p>
+          <p class="t-desc">Managed personnel records, onboarding processes, and HR administration within a large industrial organization — providing the people and process management foundation for a career pivot into IT project delivery.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ BLOG ═══ -->
-<section id="blog">
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">Thinking Out Loud</div>
-        <h2 class="section-title">Insights &amp; Lessons</h2>
+        <div class="eyebrow">The Person Behind the Portfolio</div>
+        <h2 class="section-title">About Me</h2>
       </div>
-      <p class="section-desc">Practical lessons from the field, Digital transformation, and IT project delivery.</p>
+      <p class="section-desc">A bit of context on how I got here, and what I care about beyond the deliverables.</p>
     </div>
 
-    <div class="blog-grid">
-      <a href="#" class="blog-card reveal">
-        <div class="blog-tag">EdTech · Delivery</div>
-        <h3 class="blog-title">Lessons from SchoolFlow: What Delivering an EdTech Platform Taught Me About IT Project Management</h3>
-        <p class="blog-excerpt">A 24-week delivery in an emerging market environment taught me about scope, offline architecture, and stakeholder trust.</p>
-        <div class="blog-meta"><span>June 2026</span><span class="blog-read">8 min read</span><span class="blog-arrow"><svg class="icon"><use href="#i-arrow-right"/></svg></span></div>
-      </a>
-      <a href="#" class="blog-card reveal">
-        <div class="blog-tag">ERP · Risk</div>
-        <h3 class="blog-title">ERP Implementation Risks Nobody Warns You About — And How to Mitigate Them</h3>
-        <p class="blog-excerpt">Most ERP projects fail not because of the software, but because of underestimated change management and unrealistic go-live timelines.</p>
-        <div class="blog-meta"><span>May 2026</span><span class="blog-read">10 min read</span><span class="blog-arrow"><svg class="icon"><use href="#i-arrow-right"/></svg></span></div>
-      </a>
-      <a href="#" class="blog-card reveal">
-        <div class="blog-tag">UAT · Quality</div>
-        <h3 class="blog-title">What UAT Taught Me: Why User Acceptance Testing Is the Most Underrated Phase in IT Delivery</h3>
-        <p class="blog-excerpt">After writing 75 test cases for SchoolFlow and running three test cycles, UAT is what separates successful implementations from expensive disasters.</p>
-        <div class="blog-meta"><span>April 2026</span><span class="blog-read">7 min read</span><span class="blog-arrow"><svg class="icon"><use href="#i-arrow-right"/></svg></span></div>
-      </a>
-      <a href="#" class="blog-card reveal">
-        <div class="blog-tag">Digital Transformation</div>
-        <h3 class="blog-title">Why Digital Transformation Fails — And the Three Things That Actually Make It Work</h3>
-        <p class="blog-excerpt">The three non-negotiables that separate transformations that stick from those that quietly revert to spreadsheets within six months.</p>
-        <div class="blog-meta"><span>March 2026</span><span class="blog-read">9 min read</span><span class="blog-arrow"><svg class="icon"><use href="#i-arrow-right"/></svg></span></div>
-      </a>
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <p class="about-lede">I'm a PMP-certified project professional who found my way into IT delivery through operations — not the other way around.</p>
+        <p>I started in HR administration at Ghacem Limited, moved into IT operations at Geocom Company Limited, then into formal project management at Samasoft Technologies, and most recently coordinated trade-policy programming at the AfCFTA Secretariat. The common thread across all four: taking something messy and manual and turning it into a structured system people can actually rely on.</p>
+        <p>I did an EMBA in Project Management at the University of Ghana Business School to put a framework around instincts I'd already been building on the job, and I'm PMP-certified on top of that. I enjoy the parts of a project most people try to skip — stakeholder alignment, risk registers, UAT — because that groundwork is usually what decides whether a go-live actually holds.</p>
+        <p>Right now I'm looking for a role where I can apply that discipline at scale, ideally somewhere at the intersection of IT delivery, ERP implementation, and digital transformation.</p>
+      </div>
+
+      <div class="about-side reveal">
+        <div class="about-side-label">Beyond the Deliverables</div>
+        <div class="about-facts">
+          <div class="about-fact">
+            <div class="about-fact-icon"><svg class="icon"><use href="#i-heart"/></svg></div>
+            <div>
+              <div class="about-fact-title">Community Volunteering</div>
+              <div class="about-fact-desc">Volunteered with Help the Helpless NGO (2018–2021) on community outreach supporting vulnerable groups.</div>
+            </div>
+          </div>
+          <div class="about-fact">
+            <div class="about-fact-icon"><svg class="icon"><use href="#i-book"/></svg></div>
+            <div>
+              <div class="about-fact-title">Learning French</div>
+              <div class="about-fact-desc">Focused on pronunciation and listening comprehension — currently building a small app to practice.</div>
+            </div>
+          </div>
+          <div class="about-fact">
+            <div class="about-fact-icon"><svg class="icon"><use href="#i-briefcase"/></svg></div>
+            <div>
+              <div class="about-fact-title">Real Estate &amp; Business</div>
+              <div class="about-fact-desc">An ongoing interest in real estate and business development on the side.</div>
+            </div>
+          </div>
+          <div class="about-fact">
+            <div class="about-fact-icon"><svg class="icon"><use href="#i-search"/></svg></div>
+            <div>
+              <div class="about-fact-title">Research-Minded</div>
+              <div class="about-fact-desc">I like understanding how a system or market actually works before acting on it.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -948,9 +1048,9 @@ footer{
     <div>
       <h2 class="contact-heading">Let's work <span class="accent">together.</span></h2>
       <p class="contact-sub">
-        Open to IT project management, Systems implementation, and digital transformation roles.
+        Open to IT project management, ERP implementation, and digital transformation roles.
         PMP-certified and available for full-time, contract, and remote opportunities.
-        Based in Ghana: open to international and remote roles.
+        Based in Ghana — open to international and remote roles.
       </p>
     </div>
 
@@ -980,7 +1080,12 @@ footer{
 
 <footer>
   <div class="wrap footer-inner">
-    <div class="footer-logo"></div>
+    <div class="footer-logo">Godwin Kofi Alorvor</div>
+    <div class="footer-socials">
+      <a href="mailto:alorvor.gh@outlook.com" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+      <a href="https://linkedin.com/in/alorvor-gh" target="_blank" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+    </div>
+    <div>© 2026 — Built for delivery, not decoration.</div>
   </div>
 </footer>
 
@@ -1028,7 +1133,7 @@ document.querySelectorAll('.reveal, .t-row').forEach(el => {
 // ── Stagger cards ──
 document.querySelectorAll('.project-card.reveal').forEach((c,i) => c.style.transitionDelay = `${i * 0.06}s`);
 document.querySelectorAll('.tech-card.reveal').forEach((c,i) => c.style.transitionDelay = `${i * 0.05}s`);
-document.querySelectorAll('.blog-card.reveal').forEach((c,i) => c.style.transitionDelay = `${i * 0.07}s`);
+document.querySelectorAll('.whatido-card.reveal').forEach((c,i) => c.style.transitionDelay = `${i * 0.06}s`);
 </script>
 </body>
 </html>
