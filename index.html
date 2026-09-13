@@ -276,6 +276,43 @@ html[data-theme="dark"] .icon-moon{ display:block; }
 .project-card.soon{ border-style:dashed; justify-content:center; align-items:flex-start; opacity:.7; }
 .project-card.soon .card-title{ color:var(--muted); font-size:18px; }
 
+/* ═══════════════════════════ CASE STUDY LIGHTBOX ═══════════════════════════ */
+.modal-overlay{
+  position:fixed; inset:0; z-index:500; background:rgba(8,9,12,.6); backdrop-filter:blur(4px);
+  display:flex; align-items:center; justify-content:center; padding:24px;
+  opacity:0; visibility:hidden; transition:opacity .25s var(--ease);
+}
+.modal-overlay.open{ opacity:1; visibility:visible; }
+.modal-panel{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+  max-width:680px; width:100%; max-height:85vh; overflow-y:auto; position:relative;
+  padding:40px; box-shadow:var(--shadow-lg); transform:translateY(16px) scale(.98);
+  transition:transform .3s var(--ease);
+}
+.modal-overlay.open .modal-panel{ transform:translateY(0) scale(1); }
+.modal-close{
+  position:sticky; float:right; top:0; margin:-8px -8px 0 0; width:36px; height:36px; border-radius:100px;
+  border:1px solid var(--border); background:var(--surface); color:var(--ink-soft); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:border-color .2s, color .2s;
+}
+.modal-close:hover{ border-color:var(--accent); color:var(--accent); }
+.modal-cat{ font-family:var(--mono); font-size:10.5px; color:var(--accent); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; clear:both; }
+.modal-title{ font-family:var(--display); font-size:26px; font-weight:600; letter-spacing:-.5px; margin-bottom:6px; }
+.modal-subtitle{ font-size:13.5px; color:var(--muted); margin-bottom:8px; }
+.modal-status{ display:inline-block; margin-bottom:28px; }
+.modal-section{ margin-bottom:26px; padding-bottom:26px; border-bottom:1px solid var(--border); }
+.modal-section:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.modal-section-label{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase;
+  color:var(--accent); font-weight:500; margin-bottom:10px; display:flex; align-items:center; gap:8px;
+}
+.modal-section-label .icon{ width:14px; height:14px; }
+.modal-section p{ font-size:13.5px; color:var(--ink-soft); line-height:1.75; }
+.modal-section ul{ padding-left:18px; }
+.modal-section li{ font-size:13.5px; color:var(--ink-soft); line-height:1.75; margin-bottom:4px; }
+.modal-placeholder{ font-style:italic; color:var(--muted); border:1px dashed var(--border); border-radius:9px; padding:10px 14px; background:var(--bg); }
+
+
 /* ═══════════════════════════ TECH STACK — BENTO ═══════════════════════════ */
 #techstack{ background:var(--bg); }
 .tech-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
@@ -476,6 +513,9 @@ footer{
 <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V3"/></symbol>
 <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.79 0l3.66-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.56 2.27a2 2 0 0 1-1.79 0L9.9 18.45a2 2 0 0 0-1.79 0l-3.66 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.56-2.27a2 2 0 0 1 1.79 0z"/><path d="M15 5.76v15M9 3.24v15"/></symbol>
 <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="i-trending-up" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></symbol>
 </defs>
 </svg>
 
@@ -686,7 +726,7 @@ footer{
           <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">React · Node · PostgreSQL</span></div>
         </div>
         <div class="card-actions">
-          <a href="SchoolFlow_Case_Study.pdf" class="card-btn card-btn-primary" target="_blank"><svg class="icon"><use href="#i-download"/></svg> Case Study</a>
+          <button type="button" class="card-btn card-btn-primary open-case-study" data-case="schoolflow"><svg class="icon"><use href="#i-arrow-up-right"/></svg> View Case Study</button>
           <a href="SchoolFlow_Implementation_Guide.html" class="card-btn card-btn-secondary" target="_blank"><svg class="icon"><use href="#i-arrow-up-right"/></svg> Interactive Guide</a>
         </div>
       </div>
@@ -741,7 +781,7 @@ footer{
           <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">IT Lead</span></div>
         </div>
         <div class="card-actions">
-          <a href="Geocom_DT_Case_Study_Preview.pdf" class="card-btn card-btn-primary"><svg class="icon"><use href="#i-download"/></svg> Case Study</a>
+          <button type="button" class="card-btn card-btn-primary open-case-study" data-case="geocom"><svg class="icon"><use href="#i-arrow-up-right"/></svg> View Case Study</button>
           <a href="Geocom_DT_Project_Pack_Preview.docx" class="card-btn card-btn-secondary"><svg class="icon"><use href="#i-download"/></svg> Project Pack</a>
         </div>
       </div>
@@ -768,7 +808,7 @@ footer{
           <div class="meta-item"><span class="meta-label">Audience</span><span class="meta-val">C-Suite · IT Leads</span></div>
         </div>
         <div class="card-actions">
-          <a href="#" class="card-btn card-btn-primary" onclick="alert('Coming soon — document in progress.'); return false;"><svg class="icon"><use href="#i-download"/></svg> Roadmap</a>
+          <button type="button" class="card-btn card-btn-primary open-case-study" data-case="roadmap"><svg class="icon"><use href="#i-arrow-up-right"/></svg> View Case Study</button>
           <a href="#contact" class="card-btn card-btn-secondary">Contact</a>
         </div>
       </div>
@@ -1081,6 +1121,38 @@ footer{
   </div>
 </footer>
 
+<!-- ═══ CASE STUDY LIGHTBOX ═══ -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Close case study"><svg class="icon"><use href="#i-x"/></svg></button>
+    <div class="modal-cat" id="modal-cat"></div>
+    <h3 class="modal-title" id="modal-title"></h3>
+    <p class="modal-subtitle" id="modal-subtitle"></p>
+    <span class="status-badge modal-status" id="modal-status"></span>
+
+    <div class="modal-section">
+      <div class="modal-section-label"><svg class="icon"><use href="#i-flag"/></svg> Intro / Goal</div>
+      <div id="modal-intro"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-label"><svg class="icon"><use href="#i-alert"/></svg> Challenges</div>
+      <div id="modal-challenges"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-label"><svg class="icon"><use href="#i-settings"/></svg> Solution</div>
+      <div id="modal-solution"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-label"><svg class="icon"><use href="#i-user"/></svg> My Role</div>
+      <div id="modal-role"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-label"><svg class="icon"><use href="#i-trending-up"/></svg> Results</div>
+      <div id="modal-results"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 // ── Theme toggle (persisted) ──
 const root = document.documentElement;
@@ -1126,6 +1198,91 @@ document.querySelectorAll('.reveal, .t-row').forEach(el => {
 document.querySelectorAll('.project-card.reveal').forEach((c,i) => c.style.transitionDelay = `${i * 0.06}s`);
 document.querySelectorAll('.tech-card.reveal').forEach((c,i) => c.style.transitionDelay = `${i * 0.05}s`);
 document.querySelectorAll('.whatido-card.reveal').forEach((c,i) => c.style.transitionDelay = `${i * 0.06}s`);
+
+// ── Case study lightbox ──
+const caseStudies = {
+  schoolflow: {
+    cat: 'EdTech · End-to-End Delivery',
+    title: 'SchoolFlow App',
+    subtitle: 'Digital School Management Platform',
+    status: 'live',
+    intro: "Digitize a school's paper-based administration — student registration, academic reporting, and fee management — into a single platform that works reliably even with unreliable connectivity.",
+    challenges: ["Add: what actually made this delivery hard — staff resistance to change, unreliable internet forcing an offline-first design, a tight 24-week timeline, unclear requirements at the start, or something else."],
+    solution: "Delivered an offline-first web platform (React, Node, PostgreSQL) covering registration, academic reporting, and fee management — rolled out across six phases with a structured UAT cycle ahead of go-live.",
+    role: ["Add: were you the sole PM, or leading a small team? Did you also shape requirements or design, or purely manage delivery?"],
+    results: ["Add: a concrete outcome — adoption across grade levels, a manual process eliminated, timeline held, etc. A qualitative result beats a guessed number."],
+    placeholders: ['challenges','role','results']
+  },
+  geocom: {
+    cat: 'Digital Transformation · Construction',
+    title: 'Geocom Digital Transformation',
+    subtitle: 'Digitizing Paper-Based Workflows Across Six Departments',
+    status: 'live',
+    intro: "Replace manual, paper-based workflows across six departments — HR, Finance, Document Management, Field Operations, Procurement, and the PMO — with Google Workspace and ClickUp.",
+    challenges: ["Add: what made this hard — coordinating six departments at once, staff resistance to leaving paper, budget or timeline pressure?"],
+    solution: "A four-month phased rollout of Google Workspace and ClickUp, department by department, with change management built into each phase.",
+    role: ["Add: as IT Lead, what did that actually involve day to day — configuring the tools yourself, training staff, managing department leads?"],
+    results: ["Add: a concrete outcome from the rollout."],
+    placeholders: ['challenges','role','results']
+  },
+  roadmap: {
+    cat: 'Strategy · Digital Transformation',
+    title: 'Digital Transformation Roadmap',
+    subtitle: 'Current State → Future State → Implementation Roadmap',
+    status: 'wip',
+    intro: ["Add: what organization or scenario is this roadmap for, and what was the goal?"],
+    challenges: ["Add the challenges this roadmap addresses."],
+    solution: ["Add: the phased approach — current state assessment, future state design, training plan."],
+    role: ["Add your role in developing this roadmap."],
+    results: ["Add results or expected outcomes."],
+    placeholders: ['intro','challenges','solution','role','results']
+  }
+};
+
+function renderModalSection(id, content, isPlaceholder){
+  const el = document.getElementById(id);
+  el.innerHTML = '';
+  const isList = Array.isArray(content);
+  const wrap = document.createElement(isList ? 'ul' : 'div');
+  if (isPlaceholder) wrap.classList.add('modal-placeholder');
+  (isList ? content : [content]).forEach(txt => {
+    const node = document.createElement(isList ? 'li' : 'p');
+    node.textContent = txt;
+    wrap.appendChild(node);
+  });
+  el.appendChild(wrap);
+}
+
+const modalOverlay = document.getElementById('modal-overlay');
+function openCaseStudy(key){
+  const data = caseStudies[key];
+  if (!data) return;
+  document.getElementById('modal-cat').textContent = data.cat;
+  document.getElementById('modal-title').textContent = data.title;
+  document.getElementById('modal-subtitle').textContent = data.subtitle;
+  const statusEl = document.getElementById('modal-status');
+  statusEl.textContent = data.status === 'live' ? 'Live' : 'In Progress';
+  statusEl.className = 'status-badge modal-status ' + (data.status === 'live' ? 'badge-live' : 'badge-wip');
+  const placeholders = data.placeholders || [];
+  renderModalSection('modal-intro', data.intro, placeholders.includes('intro'));
+  renderModalSection('modal-challenges', data.challenges, placeholders.includes('challenges'));
+  renderModalSection('modal-solution', data.solution, placeholders.includes('solution'));
+  renderModalSection('modal-role', data.role, placeholders.includes('role'));
+  renderModalSection('modal-results', data.results, placeholders.includes('results'));
+  modalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCaseStudy(){
+  modalOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.open-case-study').forEach(btn => {
+  btn.addEventListener('click', () => openCaseStudy(btn.dataset.case));
+});
+document.getElementById('modal-close').addEventListener('click', closeCaseStudy);
+modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeCaseStudy(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeCaseStudy(); });
+
 </script>
 </body>
 </html>
