@@ -930,22 +930,22 @@ footer{
     <div class="whatido-grid">
       <div class="whatido-card reveal">
         <div class="whatido-icon"><svg class="icon"><use href="#i-target"/></svg></div>
-        <div class="whatido-title">Deliver IT Projects End-to-End</div>
-        <div class="whatido-desc">Plan, execute, and close technology initiatives, from charter and stakeholder alignment through UAT to go-live, on schedule and within scope.</div>
+        <div class="whatido-title">Deliver Projects End-to-End</div>
+        <div class="whatido-desc">Plan, execute, and close initiatives, from charter and stakeholder alignment through UAT to go-live, on schedule and within scope.</div>
       </div>
       <div class="whatido-card reveal">
         <div class="whatido-icon"><svg class="icon"><use href="#i-layers"/></svg></div>
-        <div class="whatido-title">Implement &amp; Configure ERP Systems</div>
-        <div class="whatido-desc">Lead requirements gathering, process mapping, and go-live planning for platforms like ERPNext, with structured change management throughout.</div>
+        <div class="whatido-title">Implement &amp; Configure Systems</div>
+        <div class="whatido-desc">Lead requirements gathering, process mapping, and go-live planning, with structured change management throughout.</div>
       </div>
       <div class="whatido-card reveal">
         <div class="whatido-icon"><svg class="icon"><use href="#i-refresh"/></svg></div>
         <div class="whatido-title">Drive Digital Transformation</div>
-        <div class="whatido-desc">Replace manual, paper-based workflows with structured digital systems (Google Workspace, ClickUp) across multiple departments at once.</div>
+        <div class="whatido-desc">Replace manual, paper-based workflows with structured digital systems across multiple departments at once.</div>
       </div>
       <div class="whatido-card reveal">
         <div class="whatido-icon"><svg class="icon"><use href="#i-briefcase"/></svg></div>
-        <div class="whatido-title">Manage IT Operations &amp; Support</div>
+        <div class="whatido-title">Manage Operations &amp; Support</div>
         <div class="whatido-desc">Oversee infrastructure, systems administration, and vendor relationships so day-to-day service delivery keeps teams productive.</div>
       </div>
     </div>
@@ -954,7 +954,7 @@ footer{
     <div class="cert-grid">
       <div class="cert-item reveal">
         <div class="cert-icon"><svg class="icon"><use href="#i-badge-check"/></svg></div>
-        <div><div class="cert-name">PMP® — Project Management Professional</div><div class="cert-issuer">Project Management Institute (PMI)</div></div>
+        <div><div class="cert-name">PMP® - Project Management Professional</div><div class="cert-issuer">Project Management Institute (PMI)</div></div>
         <div class="cert-year">Active</div>
       </div>
       <div class="cert-item reveal">
@@ -1203,26 +1203,24 @@ document.querySelectorAll('.whatido-card.reveal').forEach((c,i) => c.style.trans
 const caseStudies = {
   schoolflow: {
     cat: 'EdTech · End-to-End Delivery',
-    title: 'SchoolFlow App',
-    subtitle: 'Digital School Management Platform',
+    title: 'Digital School Management Platform',
     status: 'live',
-    intro: "Digitize a school's paper-based administration — student registration, academic reporting, and fee management — into a single platform that works reliably even with unreliable connectivity.",
-    challenges: ["Add: what actually made this delivery hard — staff resistance to change, unreliable internet forcing an offline-first design, a tight 24-week timeline, unclear requirements at the start, or something else."],
+    intro: "The goal was to move the school fully off paper — admissions and registration, academic management, financial accounting and reporting, and communication onto a single platform staff could trust.",
+    challenges: "The hardest part wasn't the build, it was the environment: designing for connectivity that couldn't be relied on, and getting staff who'd run everything on paper for years to trust a new system with it.",
     solution: "Delivered an offline-first web platform (React, Node, PostgreSQL) covering registration, academic reporting, and fee management — rolled out across six phases with a structured UAT cycle ahead of go-live.",
-    role: ["Add: were you the sole PM, or leading a small team? Did you also shape requirements or design, or purely manage delivery?"],
-    results: ["Add: a concrete outcome — adoption across grade levels, a manual process eliminated, timeline held, etc. A qualitative result beats a guessed number."],
+    role: "As project manager, I was responsible for planning and implementing the management system, developing the process roadmap and leading the implementation for our client. I managed a team of 6, with 3 direct reports, and led staff training and change management as the new system was introduced.",
+    results: "The system is fully adopted, with more features being added to make running the institution easier. Teachers now spend more time teaching and less on administrative tasks",
     placeholders: ['challenges','role','results']
   },
   geocom: {
     cat: 'Digital Transformation · Construction',
-    title: 'Geocom Digital Transformation',
-    subtitle: 'Digitizing Paper-Based Workflows Across Six Departments',
+    title: 'Digital Transformation Initiative',
     status: 'live',
-    intro: "Replace manual, paper-based workflows across six departments — HR, Finance, Document Management, Field Operations, Procurement, and the PMO — with Google Workspace and ClickUp.",
-    challenges: ["Add: what made this hard — coordinating six departments at once, staff resistance to leaving paper, budget or timeline pressure?"],
-    solution: "A four-month phased rollout of Google Workspace and ClickUp, department by department, with change management built into each phase.",
-    role: ["Add: as IT Lead, what did that actually involve day to day — configuring the tools yourself, training staff, managing department leads?"],
-    results: ["Add: a concrete outcome from the rollout."],
+    intro: "The goal was to move Geocom onto a central collaboration platform and project/task management system. Document management was almost entirely manual paper files, disconnected spreadsheets making it hard to track information, maintain version control, or work efficiently across departments",
+    challenges: "The real challenge wasn't the tools, it was the people: resistance to change from staff who'd run paper systems for years, and a real skills gap, some staff had little to no experience with digital tools at all.",
+    solution: "Google Workspace was rolled out as the company's central collaboration platform and ClickUp as its project and task management system, phased across six departments(Adminstration, Finance, Procurement, Marketing, Survey and Construction) over four months backed by digital champions in each department and a parallel-running period so staff could trust the new system before paper was retired.",
+    role: "As IT Lead, I owned the technical side end to end: created the solution architecture, configuration of the platform and tools, integration of clickup, creating workflows and automations, and staff training for all 26 employees; while working alongside the consultant who owned programme governance and stakeholder communication. I also led change management support and four weeks of post-go-live stabilization",
+    results: "Document retrieval time dropped from up to 40 minutes to under 2mins, that is about a 93% reduction, site reports went from a 1–3 day delay to same-day, and all 26 staff were fully onboarded. The transformation also laid the groundwork that later de-risked Geocom's ERPNext rollout.",
     placeholders: ['challenges','role','results']
   },
   roadmap: {
